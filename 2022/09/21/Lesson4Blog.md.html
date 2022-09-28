@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>FastAI Lessons 4 Roundup | RvBlogs</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="FastAI Lessons 4 Roundup" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="My personal website." />
+<meta property="og:description" content="My personal website." />
+<link rel="canonical" href="https://exiomius.github.io/Blogs/2022/09/21/Lesson4Blog.md.html" />
+<meta property="og:url" content="https://exiomius.github.io/Blogs/2022/09/21/Lesson4Blog.md.html" />
+<meta property="og:site_name" content="RvBlogs" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-21T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="FastAI Lessons 4 Roundup" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-21T00:00:00-05:00","datePublished":"2022-09-21T00:00:00-05:00","description":"My personal website.","headline":"FastAI Lessons 4 Roundup","mainEntityOfPage":{"@type":"WebPage","@id":"https://exiomius.github.io/Blogs/2022/09/21/Lesson4Blog.md.html"},"url":"https://exiomius.github.io/Blogs/2022/09/21/Lesson4Blog.md.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/Blogs/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://exiomius.github.io/Blogs/feed.xml" title="RvBlogs" /><link rel="shortcut icon" type="image/x-icon" href="/Blogs/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/Blogs/">RvBlogs</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/Blogs/Fast1/">Fast.ai part 1</a><a class="page-link" href="/Blogs/MastersProject/">BirdSongMastersProject</a><a class="page-link" href="/Blogs/about/">About Me</a><a class="page-link" href="/Blogs/search/">Search</a><a class="page-link" href="/Blogs/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">FastAI Lessons 4 Roundup</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-21T00:00:00-05:00" itemprop="datePublished">
+        Sep 21, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      9 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/exiomius/Blogs/tree/master/_notebooks/2022-09-21-Lesson4Blog.md.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/Blogs/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/exiomius/Blogs/master?filepath=_notebooks%2F2022-09-21-Lesson4Blog.md.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/Blogs/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/exiomius/Blogs/blob/master/_notebooks/2022-09-21-Lesson4Blog.md.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/Blogs/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fexiomius%2FBlogs%2Fblob%2Fmaster%2F_notebooks%2F2022-09-21-Lesson4Blog.md.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/Blogs/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-09-21-Lesson4Blog.md.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Lesson-Overview">Lesson Overview<a class="anchor-link" href="#Lesson-Overview"> </a></h1><p>This lesson was an introduction to natural language processing (NLP). NLP includes tasks such as text classification (e.g. positive or negative sentiment) and text generation (creating new text from a prompt). It appears to be an immensely growing field and as a result certain modules are struggling to keep up to date with the state-of-the-art. A new technique called transformers has recently become popular, and FastAI's library for example has not been updated with its functionality yet, despite the authors working on it. As a result, this lesson's lecture and notebooks covers HuggingFace's transformer module, while the textbook still uses the older FastAI methods.</p>
+<p>This dilemma reflects a common issue with growing fields. As the state-of-the-art changes so quickly, one must take care to be flexible and be comfortable with learning many modules and ways of doing things. It doesn't seem to bad however, because the fundamentals behind the techniques are still not often changed, so learning it once properly will make learning newer techniques quick. Furthermore, updated modules often have really good documentation, tutorials and discussions available. HuggingFace seems to have some brilliant transformer documentation across their webpages and GitHub. Lastly, this 'dilemma' actually might be pretty entertaining. Seeing your field grow with changes and improvements and having to learn about them may keep working pretty interesting. In a way it is like also having to be wear the hat of an academic as a part of your usual job role. The variation could be fun.</p>
+<h1 id="Notebooks-covered">Notebooks covered<a class="anchor-link" href="#Notebooks-covered"> </a></h1><p>This lesson covered two notebooks,<a href="https://www.kaggle.com/code/jhoward/getting-started-with-nlp-for-absolute-beginners">Getting started with NLP for absolute beginners</a> and <a href="https://www.kaggle.com/code/jhoward/iterate-like-a-grandmaster/notebook">Iterate like a grandmaster!</a></p>
+<p>"Getting started with NLP for absolute beginners" covers:</p>
+<ul>
+<li>How to use Kaggle. Including how to use Kaggle datasets on your own PC and how to submit entries to their competitions.</li>
+<li>How to use Pandas and Transformers DataFrames to view data, and get it into the correct format for NLP model training.</li>
+<li>How to use Transformers to train and classify. </li>
+<li>The difference between training, validation, and testing data. An emphasis has been put on creating good validation data with a quote by Dr Rachel Thomas stating that often a poorly chosen validation dataset results in a disconnect between development and deployment performance. Her <a href="https://www.fast.ai/posts/2017-11-13-validation-sets.html">article</a> describes this in more detail.</li>
+<li>Training data is to train. Validation data is get an idea of generalizable performance, but often it is limited in doing so. This is often either because it hasn't been chosen prudently enough or because one has accidentally overfitted to it. Imagine a model to predict the price of a stock. Randomly selecting points to be validation data is poor because that is not how the model will be used in practice and is a much easier task. Selecting some amount of further price movement to be validation data makes sense, but your model may overfit to the specific movement pattern of that timeframe. </li>
+<li>The Pearson Correlation Coefficient, r, as a metric is discussed. Emphasis is put on firstly trying metrics on datasets to understand them, rather than delving immediately into the maths. Doing so for example yielding the fact that r is really sensitive to outliers. </li>
+<li>On outliers. Outliers are important parts of the data and mustn't be removed without reason. In our housing income and average number of rooms correlation example, there are outliers that could lead to some insights about the data. Perhaps the outliers are from a specific type of house or a specific geographical area. In this case, it may make more sense to use separate models to train on and predict separate clusters of data.</li>
+<li>On hyperparameters. Learning rate is the most important in this case. The idea is to find the largest value that doesn't result in failed training. FastAI provides a learning rate finder to help you, but Transformers does not.</li>
+</ul>
+<p>"Iterate like a grandmaster!" covers:</p>
+<ul>
+<li>How a grandmaster Kaggle competitor works. He focused on creating an effective validation set and iterating rapidly to find changes which improve validation set results. These skills carry over to real projects.</li>
+<li>For the patent classification, the input is anchor and label is target. In the test data, there are anchors not present in the training data. Thus we should make sure there are anchors in the validation data that are not in the training data.</li>
+<li>Pick a learning rate and batch size that fits your GPU. This means picking them so that we can iterate rapidly to test things out.</li>
+<li>Pick a reasonable weight decay.</li>
+<li>Pick a small number of epochs, like 3, to test with. This is because in practice much of the performance will be made in those. Thus there is no need to run many epochs every time you try a change. If there is not improvement within a few epochs, then your change is likely not very significant. Later on, when you want to more thoroughly evaluate a change, you can use more epochs and cross-validation.</li>
+<li>Pick a class to setup your arguments for your trainer. Transformers by default uses one, but FastAI has others.</li>
+<li>You need a stable validation accuracy from your epochs to know whether your future changes is making improvements. To know whether your predictions are stable, run the model from scratch a few times, say 3, and check how much it varies.</li>
+<li>To make changes easier, create a function to setup tokenization and a function to setup model creation. Then you can pass parameters quickly to create new models.</li>
+<li>In this case, previously we tokenised with a special token sep to indicate seperate entities in our input. Simply changing sep to s resulting in a big performance increase.</li>
+<li>Instead of using the same special token to indicate separate entities in our input, using different special tokens for each entity could better inform the model that each entity is different.</li>
+<li>Simply changing all text to lowercase can often help a little too.</li>
+<li>There's so many things you could try. In this notebook, most of the iteration was done by changing tokenisation, but also playing around with the other parameters might yield better results. However, instead of trying to optimise the factors already present, there are other ideas you can try. Firstly fine tuning your general language model using just patent data. Or using a model pretrained on legal vocabulary instead of general vocabulary. Using a different type of model, not in terms of architecture but a model created for a different task. One of our columns is 'context', which is a code e.g. B7 referring to a patent context. Instead of using the code, we could replace it with a description found online. There's so many things you can try especially if you think a little creatively.</li>
+<li>Remember for the final submission, to train on your validation data as well.</li>
+</ul>
+<h1 id="A-subset-of-this-chapter's-questions-and-my-shortened-answers-are-as-follows:">A subset of this chapter's questions and my shortened answers are as follows:<a class="anchor-link" href="#A-subset-of-this-chapter's-questions-and-my-shortened-answers-are-as-follows:"> </a></h1><ul>
+<li>What is self-supervised learning? When you don't use labeled data. You make the model divide the data into input and label itself. Self-supervised learning is often used to train models to be used as a transfer model for a different task such as classification.</li>
+<li>What is a language model? A model trained to predict the next word of an input text. </li>
+<li>Why do we fine-tune language models? Because the pretrained model wouldn't have had specifically been calibrated for your specific task. </li>
+<li>What is Universal Language Model Fine-Tuning? It is an approach to NLP including transfer models. In order: Find/train a general language model, transfer/fine tune it to make a task specific language model, transfer/fine tune it to make a final model for the task at hand.</li>
+<li>How does one need to prepare their data for a language model? Tokenisation, Numericalization and DataLoading must be done. </li>
+<li>What is Tokenisation? Tokenisation: Convert the text into a list of words/characters/substrings. The way you do this has to the same throughout all the models you use. If you grab a model online, you have to tokenise your models in the same way.</li>
+<li>What is Numericalization? Numericalization: First make a vocab list/dictionary of all the words used in the dataset. They will all be given unique numbers to identify them. Then convert the tokenised text into a list of these numbers.</li>
+<li>What is DataLoading? In FastAI LMDataLoader automatically sets the last token in a sequence as a label, as well as other important data preparation processes.</li>
+<li>Many details about tokenisation are discussed including special characters, rules, and repeated characters.</li>
+<li>Why would a model tokenise some words as 'unknown'? Because there is a limit to the number of words/tokens the vocab list/embedding matrix contains. </li>
+<li>Why is padding needed for text classification but not language modeling? Because PyTorch's DataLoader(s) uses tensors that can only store elements of the same type and size. In text classification, the text/documents in tensors are of varying size. In language modeling, they are not.</li>
+<li>What is an embedding matrix? I need to spend more time on this because it is a little complicated. It contains a list of vector representations of all the tokens present in the vocab list. </li>
+<li>What is perplexity? A performance metric used for judge NLP models. </li>
+<li>What is gradual unfreezing? It's a way of training a model. It is unfreezing one layer at a time. Unfreeze a layer, then training that layer’s parameters, then unfreezing another layer and then train, etc until all layers are unfrozen.</li>
+<li>Why is text generation always likely to be ahead of automatic identification of machine-generated texts? Because classifier identification models can be used to create better generation models. And in a way by definition, a better classifier model can only be trained on a better generation model after it has already been released online.</li>
+</ul>
+<h1 id="Links">Links<a class="anchor-link" href="#Links"> </a></h1><p>The course page for this sessions is <a href="https://course.fast.ai/Lessons/lesson4.html">https://course.fast.ai/Lessons/lesson4.html</a>, which includes a lecture, notebooks, and a set of questions from the course book. My answers can be found on my github repository at <a href="https://github.com/exiomius/PDL-Lesson-4">https://github.com/exiomius/PDL-Lesson-4</a></p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/Blogs/2022/09/21/Lesson4Blog.md.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/Blogs/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/Blogs/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/Blogs/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>My personal website.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" target="_blank" title="fastai"><svg class="svg-icon grey"><use xlink:href="/Blogs/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/Blogs/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
