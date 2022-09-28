@@ -415,4 +415,7 @@ li .post-meta-description { color: rgba(255, 255, 255, 0.69) !important; }
 
 p code { font-size: 19px; }
 
+/* --- The following Code Removes the Footer --- */
+.site-footer { display: none; }
+
 /*# sourceMappingURL=style.css.map */

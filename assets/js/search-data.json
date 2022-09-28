@@ -17,8 +17,30 @@
 
   
       ,"page1": {
+          "title": "Fast.ai part 1",
+          "content": "This page contains blog posts about my experience doing the excellent fast.ai 2022 part 1 course. . Posts .",
+          "url": "https://exiomius.github.io/Blogs/Fast1/",
+          "relUrl": "/Fast1/",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page2": {
+          "title": "BirdSongMastersProject",
+          "content": "This page contains blog posts about my Masters project at Durham University. . Posts .",
+          "url": "https://exiomius.github.io/Blogs/MastersProject/",
+          "relUrl": "/MastersProject/",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page3": {
           "title": "About Me",
-          "content": "This website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
+          "content": "",
           "url": "https://exiomius.github.io/Blogs/about/",
           "relUrl": "/about/",
           "date": ""
@@ -48,7 +70,7 @@
   
 
   
-      ,"page10": {
+      ,"page12": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://exiomius.github.io/Blogs/robots.txt",
