@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      5 min read
     
 </span></p>
 
@@ -125,6 +125,62 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Lesson-Overview">Lesson Overview<a class="anchor-link" href="#Lesson-Overview"> </a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="The-topics-covered,-briefly">The topics covered, briefly<a class="anchor-link" href="#The-topics-covered,-briefly"> </a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Lecture-Notes">Lecture Notes<a class="anchor-link" href="#Lecture-Notes"> </a></h1><ul>
+<li>Back to collaborative filtering notebook, about embedding matrix. </li>
+<li>PyTorch keeps track of neural network parameters/weights for you.</li>
+<li>movie_bias is the interference parameter we created in order to add bias for movies, user_bias is the one we created in order to add bias for users.</li>
+<li>How does our model work? To predict, it trains as normal on the input ratings and output movie ratings, but then we add meaningful interference parameters, movie_bias and user_bias for each movie and user respectively, to adjust with domain specific knowledge. Some movies just everyone likes, so are biased, some users just like every movie, so are biased.</li>
+<li>Visualsing embeddings: Plotting a principle component analysis of PCA component 1 and 2, gives a compressed view of how our latent factors effect eachother. It gives us a graph to interpret how the top latent factors are related to eachother. Domain specific knowledge would tell us what there PCA components/inference factors are, and we can try and understand why they relate the way they do.</li>
+<li>Embedding distance: calculate how far apart each embedding vector is from a specific movie, aka how similar each movie is compared to that movie based on the latent factors.</li>
+<li>Using deep learning for collaborative filtering instead: We use a neural net to try and enter the missing values in the matrix.</li>
+<li>we use fast.ai to try and find the embedding matrix side/number of latent variables. </li>
+<li>In practice, a combined approach of a neural net and dot product approach is best for collaborative filtering. </li>
+<li>In collab filtering, often a small number of users and movies overwealm the rest. In anime for example, some users watch so much anime compared to the rest and this screws up predictions for normal users. It's a higher level task to try and resolve this.</li>
+<li>Embedding in NLP: an embedding matrix is just a matrix of latent variables for every word. And as before, the embedding distance calculates the embedding distance between a word and other words, telling us how similar they are based on latent variables.</li>
+<li>For tabular data, using a tabular model/learner for it, creates an embedding matrix, and uses it.</li>
+<li>Collab filtering, NLP, tabular data neural nets, all use embedding matrices. </li>
+<li>Using embedding, latent variables, may be a substitute to doing a lot of feature engineering. </li>
+<li>Create and train a neural net, take its embeddings and use it with other models like random forests, it can give a nice performance boost.</li>
+<li>One latent variable found to help predict retail store sales, was distance in real life. Actually the embedding matrix's distances for that latent variable matched the distances in real life! It learnt IRL distance was important for predicting retail sales and reflected that!</li>
+<li>Convolutions: A CNN is similar to the neural networks before, but for computer vision they have a particular feature: it can find features of images like horizontal and vertical lines of handwritten numbers.</li>
+<li>How? It has a filter matrix, say a 3x3 one, and moves around, dot producting and RELUing each 3x3 subset matrix of the original image, producing a smaller image. This is called a convolution. </li>
+<li>Why does this work? Because of the values in the filter. E.g. we used a 3x3 matrix with the top elements = 1, middle elements = 0, bottom = -1. The dot product of this will only give the highest value when there's horizontal image in the top row, anything in the middle, and no image in the bottom, aka whenever there's a horizontal part of an image! In vertical parts, the bottom row will cancel out the top and produce 0s, aka the convolution layer will have nothing.</li>
+<li>The 3x3 matrix is called a filter.</li>
+<li>We can have a horizontal edges conv layer, and a vertical edges conv layer. </li>
+<li>We use another filter, but with two matrices, one for each conv layer, and to combine their features. </li>
+<li>The way we find the kernal values is to set them as parameters and use SGD to optimise. It will find the best kernal parameters for optimum digit classification. </li>
+<li>Nowadays we do a stride convoultion, e.g. stride 2, by skipping values. This reduces the grid size by 2x2. The grid size is not reduced by the kernal size, it is reduced determined by the stride we set.</li>
+<li>When we're done with stride convos, with aboug 7x7 image at the end, we do an average pool, we average the final activations. </li>
+<li>Say we're trying to identify a picture of a bear. If the bear is a small part of the picture, max pool is much better than avg pool at this. It checks each end activation for a bear, rather than having one prediction of bear or not bear for all the activations combined. </li>
+<li>Depending on how you want your model to work, pick max or avg pool accordingly. Fast.ai does this for you, it actually does an average of max/avg pool that tries both for you.</li>
+<li>A convolution, all the kernal multiplies done, mathematically is equivilent to just one big matrix multiplcation.</li>
+<li>Dropout: we can have a dropout mask, we multiply it by our filtered image, to delete random bits of it. Higher dropout means the image is harder to see. A human is able to look at a droppedoutted image and still know what the image is. A model should be able to as well, if we dropout, perhaps it is forced to learn more fundamental features, will should help against overfitting a lot.</li>
+<li>There are more activation functions/activations than ReLU. This doesn't matter much so we don't care. </li>
+<li>What to do before part 2: </li>
+<li>Read Meta Learning: How to Learn Deep Learning.</li>
+<li>Watch the videos again and code and experiment as you go.</li>
+<li>Spend time on the forums.</li>
+<li>Get together with others to study together.</li>
+<li>Build projects. </li>
+</ul>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Questions">Questions<a class="anchor-link" href="#Questions"> </a></h1>

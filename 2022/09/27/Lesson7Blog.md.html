@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      7 min read
     
 </span></p>
 
@@ -127,38 +127,103 @@ window.onload = wrap_img;
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Lesson-Overview">Lesson Overview<a class="anchor-link" href="#Lesson-Overview"> </a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="The-topics-covered,-briefly">The topics covered, briefly<a class="anchor-link" href="#The-topics-covered,-briefly"> </a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Lecture-Notes">Lecture Notes<a class="anchor-link" href="#Lecture-Notes"> </a></h1><p>Whats inside a neural net. Tweaks to the basic neural net we constructed previously.
+Going through road to the top, part 3.</p>
+<ul>
+<li>A larger model has more parameters so can find more features, but the problem is that it takes GPU memory that isn't as flexible as CPU memory. </li>
+<li>How to use as large a model as you like. Kaggle is 16Gb GPU memory. |You can find how much memory a model uses. Training for longer does not use more memory. </li>
+<li>Gradient accumeleration to avoid memory overuse problem. We run smaller batch sizes, but modify them as to act and train as if we were using the same normal batch size for all the training data.</li>
+<li>Gradient accumleration results are identicle to using a higher memory GPU for certain models. It is for convText and Transformers (NLP). If a model uses batch normalisation, then it won't exactly, but will still be a good model. </li>
+<li>Pick a batch size that fits your GPU memory, and generally higher and a multiple of 8 is better. Generally (not always) if you double batch size, half learning rate.</li>
+<li>We use ensembling bagging on good models of different arctextures. </li>
+<li>At the start it may feel random as to why certain approaches/models are better, but over time as you develop intuiton, it will be less random and more systematic.</li>
+<li><p>Generally, it makes sense to iterate on small models then switch to large models, but there's a better way of ensuring this performance converts correctly. Covered in the second course.
+Now using part 4 rttp:</p>
+</li>
+<li><p>Predicting two things instead of one, two dependant variables instead of one. E.g. from a rice photo, the type of rice (10 types) and the disease it may have (10 types).</p>
+</li>
+<li>This requires an understanding of making custom loss functions and a deeper look into how cross entropy loss works.</li>
+<li>Make a learner just for disease, and create a new metric function for it.</li>
+<li>Cross entropy loss: It goes into the maths using a seperate excel sheet. E.g, trying to predict if a image is a cat,dog,plane,fish or building. Your model outputs 5 numbers (relating to probabilities of each category). CEL first finds the softmax value for each of them. Then it compares the actual value (1 for the correct category, 0 for not) to the softmax value for each category. It multiplies the log of the probability prediction for the correct category by the actual value. </li>
+<li>Further info: <a href="https://chris-said.io/2020/12/26/two-things-that-confused-me-about-cross-entropy/">https://chris-said.io/2020/12/26/two-things-that-confused-me-about-cross-entropy/</a></li>
+<li>Binary cross entropy is just cross entropy for 1 category: is a cat or not.</li>
+<li>The loss functions have two types. The F function type and the nn class type. The latter has more parameters to play with.</li>
+<li>Change the last node outputs to be the number of categories predicted instead of the usual 1 for classification.</li>
+<li>You encode the loss function for the model to know what/how many categories to predict. You sum loss functions for multiple category types and their sub categories.</li>
+<li>This new model, that can predict 20 categories, actually is better than a model that just predicts disease type! This is because the training to do other types of predictions helps. Sometimes this approach is better, sometimes not!</li>
+</ul>
+<p>Notebook collab filtering deep dive</p>
+<ul>
+<li>A key part of recommender systems</li>
+<li>Movielens dataset of movie ratings. UserID, MovieID, and rating.</li>
+<li>How to predict how a user will rate a unrated movie for them: match up the user's movie preferences with the movie's features to give a number prediction. </li>
+<li>But we don't know their preferences and the movie features, these are called latent variables, and we can infer them from the dataset.</li>
+<li>Let's assume there are 5 latent factors, say like for a movie, it's genre, length etc, we don't set these, we infer them and then can try and interpret what they are. </li>
+<li>On choosing the number of latent factors, its hard. Fast.ai has a function to calculate this based on Jeremy's intuition, but you can play around too.</li>
+<li>Use SGD to optimise these latent factors after we set a loss function.</li>
+<li>Imagine a matrix of the users and their movie ratings. There are missing values for unrated/unseen movies. Collaborative filtering is matrix completion, trying to fill in these missing values.</li>
+<li>What is embedding? Just looking something up in an array. An embedding matrix is the array that is looked up. Matrix multiplication in an embedding matrix is the same as looking up index values in a list say as a function in excel. Think about a dot product with a one-hot encoded vector, it just returns the value you're looking up. </li>
+<li>Creating a collaborative filtering model from scratch. </li>
+<li>Covering python, PyTorch class definition and features. </li>
+<li>We create a DotProduct class to define embeddings and looking up values for UserIDs and MovieIDs.</li>
+<li>Some of our predictions can greater than 5, the maximum. Take our predictions and squish them with a sigmoid to fix this.</li>
+<li>Some users just relates all movies highly, some users have a range of ratings. Let's incoperate this. Make another inference variable, a movie bias and a user bias, reflecting that for movies, they tend to be especially related well or badly, and that for some users, they can rate all movies generally as good or bad. </li>
+<li>With more column features, we could cluster users instead to try and incoperate user and movie types/preferences?</li>
+<li>We can use L2 regularisation (weight decay), to avoid overfitting. This adds the sum of the square of the weights to the loss function. This also solves the issue of having useless interfered variables, because they won't contribute.</li>
+<li>In fast.ai, usually defaults are good, but for tabular data, it's hard to know good defaults, so it's good to test yourself.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Questions">Questions<a class="anchor-link" href="#Questions"> </a></h1><p>The questions from now on will be a part of the blog post rather than uploaded to the lesson's GitHub repo.</p>
-<p>-What problem does collaborative filtering solve?
--How does it solve it?
--Why might a collaborative filtering predictive model fail to be a very useful recommendation system?
--What does a crosstab representation of collaborative filtering data look like?
--Write the code to create a crosstab representation of the MovieLens data (you might need to do some web searching!).
--What is a latent factor? Why is it "latent"?
--What is a dot product? Calculate a dot product manually using pure Python with lists.
--What does pandas.DataFrame.merge do?
--What is an embedding matrix?
--What is the relationship between an embedding and a matrix of one-hot-encoded vectors?
--Why do we need Embedding if we could use one-hot-encoded vectors for the same thing?
--What does an embedding contain before we start training (assuming we're not using a pretained model)?
-Create a class (without peeking, if possible!) and use it.
--What does x[:,0] return?
--Rewrite the DotProduct class (without peeking, if possible!) and train a model with it.
--What is a good loss function to use for MovieLens? Why?
--What would happen if we used cross-entropy loss with MovieLens? How would we need to change the model?
--What is the use of bias in a dot product model?
--What is another name for weight decay?
--Write the equation for weight decay (without peeking!).
--Write the equation for the gradient of weight decay. Why does it help reduce weights?
--Why does reducing weights lead to better generalization?
--What does argsort do in PyTorch?
-Does sorting the movie biases give the same result as averaging overall movie ratings by movie? Why/why not?
--How do you print the names and details of the layers in a model?
--What is the "bootstrapping problem" in collaborative filtering?
--How could you deal with the bootstrapping problem for new users? For new movies?
--How can feedback loops impact collaborative filtering systems?
--When using a neural network in collaborative filtering, why can we have different numbers of factors for movies and users?
--Why is there an nn.Sequential in the CollabNN model?
--What kind of model should we use if we want to add metadata about users and items, or information such as date and time, to a collaborative filtering model?</p>
+<ul>
+<li>What problem does collaborative filtering solve?</li>
+<li>How does it solve it?</li>
+<li>Why might a collaborative filtering predictive model fail to be a very useful recommendation system?</li>
+<li>What does a crosstab representation of collaborative filtering data look like?</li>
+<li>Write the code to create a crosstab representation of the MovieLens data (you might need to do some web searching!).</li>
+<li>What is a latent factor? Why is it "latent"?</li>
+<li>What is a dot product? Calculate a dot product manually using pure Python with lists.</li>
+<li>What does pandas.DataFrame.merge do?</li>
+<li>What is an embedding matrix?</li>
+<li>What is the relationship between an embedding and a matrix of one-hot-encoded vectors?</li>
+<li>Why do we need Embedding if we could use one-hot-encoded vectors for the same thing?</li>
+<li>What does an embedding contain before we start training (assuming we're not using a pretained model)?
+Create a class (without peeking, if possible!) and use it.</li>
+<li>What does x[:,0] return?</li>
+<li>Rewrite the DotProduct class (without peeking, if possible!) and train a model with it.</li>
+<li>What is a good loss function to use for MovieLens? Why?</li>
+<li>What would happen if we used cross-entropy loss with MovieLens? How would we need to change the model?</li>
+<li>What is the use of bias in a dot product model?</li>
+<li>What is another name for weight decay?</li>
+<li>Write the equation for weight decay (without peeking!).</li>
+<li>Write the equation for the gradient of weight decay. Why does it help reduce weights?</li>
+<li>Why does reducing weights lead to better generalization?</li>
+<li>What does argsort do in PyTorch?
+Does sorting the movie biases give the same result as averaging overall movie ratings by movie? Why/why not?</li>
+<li>How do you print the names and details of the layers in a model?</li>
+<li>What is the "bootstrapping problem" in collaborative filtering?</li>
+<li>How could you deal with the bootstrapping problem for new users? For new movies?</li>
+<li>How can feedback loops impact collaborative filtering systems?</li>
+<li>When using a neural network in collaborative filtering, why can we have different numbers of factors for movies and users?</li>
+<li>Why is there an nn.Sequential in the CollabNN model?</li>
+<li>What kind of model should we use if we want to add metadata about users and items, or information such as date and time, to a collaborative filtering model?</li>
+</ul>
 
 </div>
 </div>
