@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      5 min read
     
 </span></p>
 
@@ -134,14 +134,20 @@ window.onload = wrap_img;
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>(This post is still in progress)</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Meeting:">Meeting:<a class="anchor-link" href="#Meeting:"> </a></h1><p>During the meeting we discussed:</p>
+<ul>
+<li>How to introduce more Physics into the project. This would be done namely using stereo audio, which is audio recorded in 3 dimensions. The idea is that using the Doppler effect and other Physics concepts, we could come up with a better audio collection technique that would make the model classification better. However, it may take a lot of time and effort to understand how to setup multiple microphones and analyse their data, given that there are features such as their synchronisation, batteries, and calibration. In total we have around 90 microphones? Because stereo is 3D, we could use it to classify where a bird singing is, and multiple birds singing. Would also need to account for audio reflecting off surfaces.</li>
+<li>A previous masters student at Durham, Stuart, worked with the biology department to create his thesis which may contain useful domain knowledge for this project. It can be found at <a href="http://etheses.dur.ac.uk/11481/">http://etheses.dur.ac.uk/11481/</a>. He is now doing a PhD in Scotland and his further work may be worth looking into, or he may be worth directly getting in contact with to collaborate.</li>
+<li>The biology department have published a paper 3 years ago about using a ensemble models to classify the cocktail problem. While the models and approach may be outdated, the data preprocessing steps might be similar to what I would have to do now.</li>
+<li>I would have to have a look at the collected datasets to get an idea about their properties and train accordingly. Some of their data was painstakenly hand labeled.</li>
+<li>For humans, some bird song is easier classified by image, and some by sound. I suppose this is why ensembles are a good approach. </li>
+<li>For the aims of this project, I would need to define a custom metric for the biology department's needs. For example, if we really want a certain species of bird, we could penalise false positives of it very harshly. </li>
+<li>About volunteer interaction: some birds are really hard to classify that even professors struggle. If you were to have a volunteer system, you should have a delegation system to assign hard tasks to experienced users.</li>
+<li>Because humans have to listen to the same audio file multiple times to recognise birds, I wonder if we can train or apply a model this way.</li>
+<li>Training on bad quality data, which xeno-canto labels, might be a good idea to improve generalisability.</li>
+<li>Some bird species have different times at which they sing in the day, so it could be worthwhile including this in the training data somehow.</li>
+<li>An interesting problem is say, looking at how the frequency of a rare species changes over time in a given area. Since we have a dataset collected over 3 years, this in theory would be possible. </li>
+</ul>
 
 </div>
 </div>
@@ -181,12 +187,6 @@ and <a href="https://exiomius.github.io/Blogs/fast.ai1/2022/09/27/Lesson8Blog.md
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Kaggle-Competitions:">Kaggle Competitions:<a class="anchor-link" href="#Kaggle-Competitions:"> </a></h1><p>In theory, the biology department could put up a Kaggle competition for their own exact needs with/without prize money and see what users submit. This would however still require knowledge about how to upload their data, create correct training, validation, and test data, set the correct metrics, interpret the data, and check that submissions are valid.</p>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Next-Steps">Next Steps<a class="anchor-link" href="#Next-Steps"> </a></h1>
 </div>
 </div>
 </div>
