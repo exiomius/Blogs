@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      10 min read
+      11 min read
     
 </span></p>
 
@@ -162,7 +162,7 @@ There could be much work to be done on transforming the audio data. Fourier and 
 <h2 id="5.-Custom-metrics,-creation,-and-evaluation-for-models">5. Custom metrics, creation, and evaluation for models<a class="anchor-link" href="#5.-Custom-metrics,-creation,-and-evaluation-for-models"> </a></h2><p>The biology department have their own interests and goals of what they want from a model. I would need to talk in detail with them about their priorities, e.g. preferences in confusion matrix metrics, in bird species etc. They might want a model to work with data over a few years to spot trends too.</p>
 <h2 id="6.-Machine-learning-explainability-and-communication">6. Machine learning explainability and communication<a class="anchor-link" href="#6.-Machine-learning-explainability-and-communication"> </a></h2><p>Learning how to implement and create methods and visualisations to communicate why the models are predicting as they do. This is especially important for marking in the final report.</p>
 <h2 id="7.-Machine-learning-maths.">7. Machine learning maths.<a class="anchor-link" href="#7.-Machine-learning-maths."> </a></h2><p>To read and implement the latest machine learning papers, some mathematical knowledge is needed. I am contemplating doing yet another free fast.ai course, Computational Linear Algebra, explained here <a href="https://www.fast.ai/posts/2017-07-17-num-lin-alg.html">https://www.fast.ai/posts/2017-07-17-num-lin-alg.html</a>, to help with the maths side of things. <br /></p>
-<p>Alternatively or in addition, the book Deep Learning by Ian Goodfellow provides a mathematical backing and Jeremy recommended reading the first 6 chapters of it to help with framework creation.</p>
+<p>Alternatively or in addition, the book Deep Learning by Ian Goodfellow provides a mathematical backing and Jeremy recommended reading the first 6 chapters of it to help with understanding and implementing maths in papers.</p>
 
 </div>
 </div>
@@ -179,6 +179,13 @@ There could be much work to be done on transforming the audio data. Fourier and 
 <li>Convert the class id to a class name with id2label to return an interpretable result.
 "</li>
 </ol>
+<p>I went through the HuggingFace transformers documentation and did some of the notebooks to understand them.</p>
+<ul>
+<li><a href="https://www.kaggle.com/adnanjinnah/audio-classification-hf-1/">https://www.kaggle.com/adnanjinnah/audio-classification-hf-1/</a></li>
+<li><a href="https://www.kaggle.com/adnanjinnah/audio-classification-hf-2/">https://www.kaggle.com/adnanjinnah/audio-classification-hf-2/</a></li>
+<li><a href="https://www.kaggle.com/adnanjinnah/audio-classification-hf-3/">https://www.kaggle.com/adnanjinnah/audio-classification-hf-3/</a>
+and they covered the 4 step process detailed above.</li>
+</ul>
 <h3 id="Practiced-Trying-to-attempt-BirdCLEF-2022">Practiced Trying to attempt BirdCLEF 2022<a class="anchor-link" href="#Practiced-Trying-to-attempt-BirdCLEF-2022"> </a></h3><p>It's well worth practicing attempts for a competition with the goal exactly as my own.
 After trying fast.ai's audio module last week, and thinking it is outdated (the GitHub repo hasn't been updated in roughly 6 months), I decided to use HuggingFace instead. This is mainly due to Jeremy recommending it as an up to date framework, but also because it is used in fast.ai part 2.</p>
 <p>With that in mind, I attempted it at <a href="https://www.kaggle.com/adnanjinnah/birdclef-first-attempt/">https://www.kaggle.com/adnanjinnah/birdclef-first-attempt/</a>.
@@ -212,6 +219,8 @@ In it, Jeremy described conceptually how stable diffusion, an crazy new image ge
 Due to it's difficulty, the lesson took me a full day to complete, but it was well worth it. The ideas and skills I'm being introduced to and learning will prove really helpful for the project going forwards. 
 Next week, the lesson will focus on programming stable diffusion from scratch, and building on that, how to programme your own custom Python machine learning libraries. This is vital because it would allow me not just to copy other people's code to solve the cocktail problem, but implement my own ideas and test things, perhaps even at a research level.</p>
 <p>My post for lesson 9 can be found at:</p>
+<h3 id="Finished-CLA-lesson-1:">Finished CLA lesson 1:<a class="anchor-link" href="#Finished-CLA-lesson-1:"> </a></h3><p>Computational Linear Algebra is a fast.ai course covering linear algebra to be centered around practical applications and algorithms. <br />
+More info and lesson 1 blog can be found here:</p>
 <h3 id="Useful-Datasets-Found">Useful Datasets Found<a class="anchor-link" href="#Useful-Datasets-Found"> </a></h3><ul>
 <li>BirdCLEF 2022 uses data from xeno-carto, implying that last week's approach to downloading them is a good idea.</li>
 <li>I found ESC-50, a dataset of labeled environmental audio recordings at <a href="https://dagshub.com/kinkusuma/esc50-dataset">https://dagshub.com/kinkusuma/esc50-dataset</a>, also at <a href="https://huggingface.co/datasets/ashraq/esc50">https://huggingface.co/datasets/ashraq/esc50</a>. These include sounds like rain, sea waves, animals.</li>
